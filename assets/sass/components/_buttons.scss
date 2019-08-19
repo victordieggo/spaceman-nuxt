@@ -1,0 +1,106 @@
+/*
+=======================================================
+Buttons
+=======================================================
+1. Default Styles
+2. Button Variations
+=======================================================
+*/
+
+/*
+-------------------------------------------------------
+1. Default Styles
+-------------------------------------------------------
+*/
+
+.btn {
+  color: color(dark);
+  padding: 0.5em 1em;
+  text-align: center;
+  line-height: 1.5em;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: $formElements-borderRadius;
+  transition: background 0.3s, border 0.3s, color 0.3s;
+  @include btnColor(color(gray));
+  @include vcenter;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    text-decoration: none;
+    @include btnColor(color(grayDark));
+  }
+
+  span {
+    @include vcenter;
+  }
+
+  &-icon {
+    fill: color(dark);
+    @include vcenter;
+    @include size(1em);
+    transition: fill 0.3s;
+
+    span + &,
+    & + span {
+      margin-left: 0.7em;
+    }
+  }
+
+  &--outline:not(:hover):not(:focus) {
+    color: inherit;
+    background-color: transparent;
+
+    .btn-icon {
+      fill: color(dark);
+    }
+  }
+
+  &:disabled,
+  &.is-disabled {
+    z-index: -1;
+    opacity: 0.6;
+    position: relative;
+    pointer-events: none;
+  }
+}
+
+/*
+-------------------------------------------------------
+2. Button Variations
+-------------------------------------------------------
+*/
+
+.btn--main {
+  color: color(light);
+  @include btnColor(color(main));
+
+  .btn-icon {
+    fill: color(light);
+  }
+
+  &:focus,
+  &:hover {
+    @include btnColor(color(mainLight));
+  }
+}
+
+.btn--mainOutline {
+  color: color(main);
+  @include btnColor(transparent, color(main));
+
+  .btn-icon {
+    fill: color(main);
+  }
+
+  &:focus,
+  &:hover {
+    color: color(light);
+    @include btnColor(color(mainLight));
+
+    .btn-icon {
+      fill: color(light);
+    }
+  }
+}
