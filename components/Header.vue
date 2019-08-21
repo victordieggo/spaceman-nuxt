@@ -4,13 +4,11 @@
       <div class="row">
         <div class="col col-vcenter">
           <h1 class="u-title-5">
-            <a :href="baseURL">
-              Project Title
-            </a>
+            <n-link class="u-noUnderline" to="/" v-html="'Project Title'"/>
           </h1>
         </div>
         <div class="col col-vcenter">
-          <Navbar />
+          <Navbar :items="NavbarItems" />
         </div>
       </div>
     </div>
@@ -18,14 +16,15 @@
 </template>
 
 <script>
-import Navbar from '~/components/Navbar.vue'
+import Navbar from '@/components/Navbar.vue'
+import NavbarItems from '@/data/navigation.js'
 export default {
   components: {
-    Navbar
+    Navbar,
   },
   data() {
     return {
-      baseURL: process.env.baseURL
+      NavbarItems: NavbarItems,
     }
   }
 }
