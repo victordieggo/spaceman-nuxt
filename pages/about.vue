@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  asyncData (context) {
+  data() {
     return {
       title: 'About'
     }
