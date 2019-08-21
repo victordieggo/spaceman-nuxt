@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "nuxt": "^2.0.0"
@@ -18,6 +19,7 @@
   "devDependencies": {
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
+    "push-dir": "^0.4.1",
     "sass-loader": "^7.1.0"
   }
 }
