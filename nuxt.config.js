@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
 
@@ -38,5 +37,9 @@ export default {
   build: {
     extend(config, ctx) {
     }
+  },
+
+  router: {
+    base: '/spaceman-nuxt/'
   }
 }
