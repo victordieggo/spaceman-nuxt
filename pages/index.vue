@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="heroImage u-bgImage" role="banner" :style="{'background-image':'url('+ baseURL + require('@/assets/img/slide.jpg') +')'}">
+    <div class="heroImage u-bgImage" role="banner" :style="{'background-image':'url('+ require('@/assets/img/slide.jpg') +')'}">
       <div class="container">
         <div class="row">
           <div class="col-vbottom">
@@ -45,13 +45,3 @@
     </main>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      baseURL: process.env.baseURL
-    }
-  }
-}
-</script>
